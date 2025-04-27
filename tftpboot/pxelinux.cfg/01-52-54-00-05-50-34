@@ -1,0 +1,6 @@
+DEFAULT pxeboot
+TIMEOUT 20
+PROMPT 0
+LABEL pxeboot
+    KERNEL http://172.10.1.10:8080/ocp4/rhcos_kernel
+    APPEND initrd=http://172.10.1.10:8080/ocp4/rhcos_init coreos.live.rootfs_url=http://172.10.1.10:8080/ocp4/rhcos_root coreos.inst.install_dev=/dev/sda coreos.inst.ignition_url=http://172.10.1.10:8080/ocp4/bootstrap.ign

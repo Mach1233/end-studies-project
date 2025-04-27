@@ -1,0 +1,56 @@
+apiVersion: v1
+baseDomain: ocp.lan
+compute: 
+- hyperthreading: Enabled 
+  name: worker
+  replicas: 0 
+controlPlane: 
+  hyperthreading: Enabled 
+  name: master
+  replicas: 3 
+metadata:
+  name: lab
+networking:
+  clusterNetwork:
+  - cidr: 10.128.0.0/14 
+    hostPrefix: 23 
+  networkType: OVNKubernetes 
+  serviceNetwork: 
+  - 172.30.0.0/16
+platform:
+  none: {} 
+fips: false 
+pullSecret: '{"auths":{"mirror.lab.ocp.lan:8443": {"auth": "aW5pdDpwbjFlNXJoOTJVZEg4em8wYU40eExGcWI3Nml0RDN5dw==" , "email": "mohamed.mechraoui@ensi-uma.tn"    }}}' 
+sshKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCmIlvlH7EWXVqKxErfBRTSPM9E+08MEXOLy5EtsEuxc3trtzmG51/c24gXr++GYV15NqCMcuWfHjbs0Mn0Y2Wst2jfFa6XKS0vSHYNeKNg1bqQ+f/40sFyyk5c30ePYzCsAZyRhWORdKE95erEe3Gd4CzN+4e/5DUgFKTVovOIbEVaCcdTUgFoxYyRp21p7bE6zphUS76vJOda+RfViym+ips8exbOAdV6SYhGWQpjbnttGZQQj5//RLoocVXICJqt4Pdnt8pnDui4BLmi7THuJV8Mjm/lMb/0W9EVoGIYXiGD6Tl+wqvJGNPMpRjTm+u4z9MAx1zGzEoYeZuSozpz/9uRHX21n6Ltx7RRMwz37TWNwtRd5PXP6aNmdW3HySK38fsRNYUcrJKpqs9s1/UFJ4NZs9cC5w+bBJeIT5JvP1lmP4ef8hzML9vvG1ZIdrxwxr4lU9lCv6gpwAGbl8I4JiVfTIMQqnY0dHVgXDIsGhfqzqX/KQoU2t3zVBhrbXM=' 
+additionalTrustBundle: | 
+  -----BEGIN CERTIFICATE-----
+  MIIEFTCCAv2gAwIBAgIUISbhMSRMz3Wgg4gdxvayyOe+RZswDQYJKoZIhvcNAQEL
+  BQAwgZkxCzAJBgNVBAYTAlhYMQswCQYDVQQIDAJUVTEPMA0GA1UEBwwGVE9aRVVS
+  MRAwDgYDVQQKDAdMaW5vc2Z0MQ8wDQYDVQQLDAZEZXZvcHMxGzAZBgNVBAMMEm1p
+  cnJvci5sYWIub2NwLmxhbjEsMCoGCSqGSIb3DQEJARYdbW9oYW1lZC5tZWNocmFv
+  dWlAZW5zaS11bWEudG4wHhcNMjUwNDIyMTAwOTAxWhcNMjgwMjEwMTAwOTAxWjCB
+  mTELMAkGA1UEBhMCWFgxCzAJBgNVBAgMAlRVMQ8wDQYDVQQHDAZUT1pFVVIxEDAO
+  BgNVBAoMB0xpbm9zZnQxDzANBgNVBAsMBkRldm9wczEbMBkGA1UEAwwSbWlycm9y
+  LmxhYi5vY3AubGFuMSwwKgYJKoZIhvcNAQkBFh1tb2hhbWVkLm1lY2hyYW91aUBl
+  bnNpLXVtYS50bjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmLdqoO
+  AmsQsOdhlzZmTBfAjV0dAXx3GZagfSijWVxGNo1hxJlaj059D61ZqR4SpGWZPiya
+  rgwaFI9SnApFO6of3Dt1UKYjhUFot0g708zt2uvMEEBDWbuGxwKlN9AVCM4gZFS7
+  GSdsqsn6wRcquB0+lm6SGaSMeb0iydoxh9O5Max01sBBF3S+fmeR085+mdaXAj4q
+  Oen77SCfxlCeKrRIBXyQJ7TArNpHIeTItO2zT8HmFfSpy25lC+i/AN55XHXOCDxO
+  vr5xj77i/ygPoRZ3V8zMbWHxr0m8zEc+Jr3fb45LJpNGWf+R6sYeABe6thRzW/kL
+  Y1KsLqCenYepYlECAwEAAaNTMFEwHQYDVR0OBBYEFPn5UERdl3fTVOr3LRpmcPP8
+  ohV7MB8GA1UdIwQYMBaAFPn5UERdl3fTVOr3LRpmcPP8ohV7MA8GA1UdEwEB/wQF
+  MAMBAf8wDQYJKoZIhvcNAQELBQADggEBAHeg7v44gXckzH3SkwU4vm7b4AHUhQQK
+  algNRtcyVq8bqo1kCGWtg9RVerz9Qpzh8w71YQFOScSA0X1+lPWRhtEPzUZWox4u
+  X4iIBxATlPeFkhHOUCkQxC+qzTJwWf8GaMi/8ZzCZEPjsHOshtpPsc75D3UgfgB+
+  fai1g0S7hU4l95W+AW2+OUxD6FdG+4DV66BdINKeXwvx5sqB6fY9RggZeMLPLa/n
+  eNsXCKtDdLvRIk8OZ+X+aCoxUmL+/cn2ZOR7zaxs/d0pgrkLWGVweITljB+22b2B
+  000AGVUIdksNvEVgNV1irXcFXOatLSxqXhw087To9kmZ640xhLRsKus=
+  -----END CERTIFICATE-----
+imageDigestSources: 
+- mirrors:
+  - mirror.lab.ocp.lan:8443/ocp4/openshift4
+  source: quay.io/openshift-release-dev/ocp-release
+- mirrors:
+  - mirror.lab.ocp.lan:8443/ocp4/openshift4
+  source: quay.io/openshift-release-dev/ocp-v4.0-art-dev
